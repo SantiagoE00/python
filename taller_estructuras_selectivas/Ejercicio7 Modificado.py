@@ -73,24 +73,3 @@ total = precio_entrada * cantidad
 print(f"Tipo de cliente: {tipo_cliente}")
 print(f"Precio de cada entrada: ${precio_entrada:,}")
 print(f"Total a pagar por {cantidad} entradas: ${total:,}")
-
-
-# ==========================================================================
-# COMO MODIFICARLO (por si el instructor pide un cambio):
-#
-# - Cambiar un precio: cambia el numero en "precio_entrada = ..." de la
-#   rama que quieras. Ej: ninos a $7.000 -> precio_entrada = 7000
-#
-# - Cambiar una edad limite: cambia el numero de la condicion.
-#   Ej: que ninos sean menores de 10 -> if edad < 10:
-#
-# - Agregar otra categoria: agrega otro elif ANTES del else.
-#   Ej: estudiantes de 12 a 17 anios a $10.000:
-#
-#       elif edad < 18:
-#           tipo_cliente = "Estudiante"
-#           precio_entrada = 10000
-#
-#   (debe ir despues del "if edad < 12" y antes del "elif edad < 60",
-#    porque las condiciones se revisan en orden, de la edad menor a la mayor)
-# ==========================================================================
