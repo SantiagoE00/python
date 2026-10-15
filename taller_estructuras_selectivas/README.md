@@ -22,37 +22,43 @@ Para ejecutar cualquiera: `python ejercicio1_aprueba_algoritmia.py`
 
 ## Parte b – Ejercicio modificado
 
-Archivo: `Ejercicio7 Modificado.py` (basado en el **Ejercicio 7** de las llantas).
+Archivo: `Ejercicio7 Modificado.py`
 
-En el ejercicio original, el precio de cada llanta dependía de la **cantidad** que se compraba. Lo transformé en otro problema: un cine que cobra la entrada según la **edad** de la persona.
+Tomé el **Ejercicio 7** (promoción de llantas "Todo Terreno") y lo dejé igual, pero le agregué funciones nuevas:
 
-| Edad | Tipo de cliente | Precio |
-|------|-----------------|--------|
-| Menor de 12 | Niño | $8.000 |
-| De 12 a 59 | Adulto | $15.000 |
-| 60 o más | Adulto mayor | $10.000 |
+1. **Validación de la cantidad:** si se ingresan 0 llantas o un número negativo, el programa muestra un error.
+2. **Forma de pago:** pagando en efectivo se aplica un 5% de descuento adicional; con tarjeta no hay descuento; si se escribe otra forma de pago, avisa que no es válida.
+3. **Resultados más completos:** muestra el precio por llanta, el subtotal, el descuento y el total a pagar.
 
 ### ¿Qué condiciones utilicé?
 
-- `if edad < 12`: si la persona es niño, la entrada vale $8.000.
-- `elif edad < 60`: si es adulto (de 12 a 59 años), vale $15.000.
-- `else`: si es adulto mayor (60 años o más), vale $10.000.
+| Condición | Para qué sirve |
+|-----------|----------------|
+| `if cantidad <= 0` | Detecta una cantidad inválida y muestra error (nuevo) |
+| `if cantidad < 5` | Menos de 5 llantas: $300.000 cada una (original) |
+| `elif cantidad <= 10` | De 5 a 10 llantas: $250.000 cada una (original) |
+| `else` | Más de 10 llantas: $200.000 cada una (original) |
+| `if forma_pago == "efectivo"` | 5% de descuento sobre el subtotal (nuevo) |
+| `elif forma_pago == "tarjeta"` | Sin descuento (nuevo) |
+| `else` | Forma de pago no válida, sin descuento (nuevo) |
 
 ### ¿Por qué las organicé de esa manera?
 
-Las ordené de la edad **menor a la mayor**. Python revisa las condiciones de arriba hacia abajo y entra solo en la primera que se cumpla. Por eso, cuando llega a `elif edad < 60` ya sabe que la edad **no** es menor que 12, y no hace falta escribir `edad >= 12 and edad < 60`.
-
-El `else` del final atrapa todos los casos que no cumplieron las condiciones anteriores (60 años o más), así ninguna edad queda sin precio.
+- **Primero va la validación**, porque si la cantidad no es válida no tiene sentido calcular precios. Todo el resto del programa queda dentro del `else`, así solo se ejecuta cuando la cantidad es correcta.
+- **Los rangos de precio van de la cantidad menor a la mayor.** Python entra solo en la primera condición que se cumpla, por eso al llegar a `elif cantidad <= 10` ya se sabe que la cantidad no es menor que 5, y no hace falta escribir `cantidad >= 5 and cantidad <= 10`.
+- **La forma de pago va después del precio**, porque el descuento se calcula sobre el subtotal, y el subtotal depende del precio de cada llanta.
+- Cada grupo termina en un `else`, para que ningún caso quede sin respuesta.
 
 ### ¿Qué ocurre si cambia uno de los valores de entrada?
 
-| Edad | Entradas | Resultado |
-|------|----------|-----------|
-| 8 | 2 | Niño, $8.000 c/u, total $16.000 |
-| 11 | 1 | Niño, $8.000 (11 todavía es menor que 12) |
-| 12 | 1 | Adulto, $15.000 (con un año más cambia de categoría) |
-| 59 | 1 | Adulto, $15.000 |
-| 60 | 2 | Adulto mayor, $10.000 c/u, total $20.000 |
+| Cantidad | Forma de pago | Precio c/u | Subtotal | Descuento | Total |
+|----------|---------------|------------|----------|-----------|-------|
+| 0 | — | — | — | — | Error: cantidad inválida |
+| 4 | efectivo | $300.000 | $1.200.000 | $60.000 | $1.140.000 |
+| 4 | tarjeta | $300.000 | $1.200.000 | $0 | $1.200.000 |
+| 10 | efectivo | $250.000 | $2.500.000 | $125.000 | $2.375.000 |
+| 11 | tarjeta | $200.000 | $2.200.000 | $0 | $2.200.000 |
 
-- Si cambia la **edad**, puede cambiar la rama que se ejecuta y, con ella, el tipo de cliente y el precio. El cambio ocurre justo en los límites: con 11 años se cobra como niño y con 12 como adulto.
-- Si cambia la **cantidad**, el precio de cada entrada sigue igual y solo cambia el total.
+- Si cambia la **cantidad**, puede cambiar el precio por llanta. Por ejemplo, con 10 llantas cada una cuesta $250.000, pero con 11 baja a $200.000, y el total queda incluso más barato.
+- Si cambia la **forma de pago** con la misma cantidad, solo cambia el descuento. Por ejemplo, 4 llantas en efectivo cuestan $60.000 menos que con tarjeta.
+- Si la cantidad es **0 o negativa**, el programa no calcula nada y muestra el error.
