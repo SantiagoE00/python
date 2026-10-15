@@ -22,7 +22,7 @@ Para ejecutar cualquiera: `python ejercicio1_aprueba_algoritmia.py`
 
 ## Parte b – Ejercicio modificado
 
-Archivo: `parte_b_entrada_cine.py` (basado en el **Ejercicio 7** de las llantas).
+Archivo: `Ejercicio7 Modificado.py` (basado en el **Ejercicio 7** de las llantas).
 
 En el ejercicio original, el precio de cada llanta dependía de la **cantidad** que se compraba. Lo transformé en otro problema: un cine que cobra la entrada según la **edad** de la persona.
 
