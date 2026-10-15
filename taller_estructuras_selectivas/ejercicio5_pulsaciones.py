@@ -1,6 +1,10 @@
-# Ejercicio 5: Numero de pulsaciones por cada 10 segundos de ejercicio aerobico.
-# Femenino: (220 - edad) / 10
-# Masculino: (210 - edad) / 10
+# ==========================================================================
+# EJERCICIO 5
+# Calcular el numero de pulsaciones que debe tener una persona por cada 10
+# segundos de ejercicio aerobico; la formula que se aplica es:
+#  - cuando el sexo es femenino: num. pulsaciones = (220 - edad) / 10
+#  - si el sexo es masculino:    num. pulsaciones = (210 - edad) / 10
+# ==========================================================================
 
 print("=== CALCULO DE PULSACIONES ===")
 edad = int(input("Ingrese la edad: "))

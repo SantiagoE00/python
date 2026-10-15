@@ -1,5 +1,11 @@
-# Ejercicio 2: Total a pagar por la compra de zapatillas.
-# 3 o mas zapatillas -> 20% de descuento; menos de 3 -> 10% de descuento.
+# ==========================================================================
+# EJERCICIO 2
+# Calcular el total a pagar por la compra de zapatillas. Si se compran tres o
+# mas zapatillas se aplica un descuento del 20% sobre el total de la compra y
+# si son menos de tres zapatillas un descuento del 10%. Mostrar en pantalla el
+# valor de la compra, el valor del descuento y el valor a pagar una vez
+# aplicado el descuento.
+# ==========================================================================
 
 print("=== COMPRA DE ZAPATILLAS ===")
 cantidad = int(input("Ingrese la cantidad de zapatillas: "))

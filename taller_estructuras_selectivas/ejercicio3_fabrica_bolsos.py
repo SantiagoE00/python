@@ -1,8 +1,23 @@
-# Ejercicio 3: Forma de pago de una compra a una fabrica de bolsos.
-# Si el monto excede $500.000: 55% dinero propio, 30% prestamo al banco,
-#   el resto (15%) a credito con el fabricante.
-# Si no excede $500.000: 70% dinero propio y 30% a credito con el fabricante.
-# El fabricante cobra 20% de intereses sobre lo que se paga a credito.
+# ==========================================================================
+# EJERCICIO 3
+# Una empresa quiere hacer una compra de varias piezas de la misma clase a una
+# fabrica de bolsos. La empresa, dependiendo del monto total de la compra,
+# decidira que hacer para pagar al fabricante:
+#  - Si el monto total de la compra excede de $500.000 la empresa tendra la
+#    capacidad de invertir de su propio dinero un 55% del monto de la compra,
+#    pedir prestado al banco un 30% y el resto lo pagara solicitando un
+#    credito al fabricante.
+#  - Si el monto total de la compra no excede de $500.000 la empresa tendra
+#    capacidad de invertir de su propio dinero un 70% y el restante 30% lo
+#    pagara solicitando credito al fabricante.
+# El fabricante cobra por concepto de intereses un 20% sobre la cantidad que
+# se le pague a credito.
+# Imprimir el valor invertido de su propio dinero, el valor prestado al banco
+# y el valor del credito solicitado al fabricante, segun sea el caso.
+#
+# Nota: el 20% de intereses se aplica en los dos casos, porque en ambos se
+# paga una parte a credito al fabricante.
+# ==========================================================================
 
 print("=== COMPRA A LA FABRICA DE BOLSOS ===")
 cantidad = int(input("Ingrese la cantidad de bolsos: "))

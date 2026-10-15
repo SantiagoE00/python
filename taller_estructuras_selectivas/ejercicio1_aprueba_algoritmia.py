@@ -1,5 +1,9 @@
-# Ejercicio 1: Determinar si un aprendiz aprueba o reprueba Algoritmia.
-# Aprueba si el promedio de tres calificaciones es mayor o igual a 70.
+# ==========================================================================
+# EJERCICIO 1
+# Determinar si un aprendiz aprueba o desaprueba Algoritmia, sabiendo que
+# aprobara si su promedio de tres calificaciones es mayor o igual a 70;
+# reprueba en caso contrario.
+# ==========================================================================
 
 print("=== APROBACION DE ALGORITMIA ===")
 nota1 = float(input("Ingrese la primera calificacion: "))

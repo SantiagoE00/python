@@ -1,6 +1,11 @@
-# Ejercicio 6: Pago de la pension de un alumno.
-# Promedio >= 4.0 -> 30% de descuento sobre la pension.
-# Promedio < 4.0  -> paga la pension completa mas el 10% de IVA.
+# ==========================================================================
+# EJERCICIO 6
+# Se ha establecido un programa para estimular a los alumnos, el cual consiste
+# en lo siguiente: si el promedio obtenido por un alumno en el ultimo periodo
+# es mayor o igual que 4.0, se le hara un descuento del 30% sobre la pension;
+# si el promedio obtenido es menor que 4.0 debera pagar la pension completa,
+# la cual incluye el 10% de IVA. Obtener cuanto debe pagar un alumno.
+# ==========================================================================
 
 print("=== PAGO DE PENSION ===")
 pension = float(input("Ingrese el valor de la pension: "))

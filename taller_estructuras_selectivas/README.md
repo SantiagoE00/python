@@ -22,35 +22,37 @@ Para ejecutar cualquiera: `python ejercicio1_aprueba_algoritmia.py`
 
 ## Parte b – Ejercicio modificado
 
-Archivo: `parte_b_desempeno_aprendiz.py` (basado en el Ejercicio 1).
+Archivo: `parte_b_entrada_cine.py` (basado en el **Ejercicio 7** de las llantas).
 
-El programa original solo decía si el aprendiz **aprueba o reprueba** con una sola condición (`promedio >= 70`). Lo transformé para que **clasifique el desempeño** del aprendiz y le diga qué debe hacer, lo que requiere varias decisiones con `if`, `elif` y `else`.
+En el ejercicio original, el precio de cada llanta dependía de la **cantidad** que se compraba. Lo transformé en otro problema: un cine que cobra la entrada según la **edad** de la persona.
+
+| Edad | Tipo de cliente | Precio |
+|------|-----------------|--------|
+| Menor de 12 | Niño | $8.000 |
+| De 12 a 59 | Adulto | $15.000 |
+| 60 o más | Adulto mayor | $10.000 |
 
 ### ¿Qué condiciones utilicé?
 
-1. `nota < 0 or nota > 100` (para cada nota): valida que las calificaciones estén en el rango permitido. Si alguna está fuera, muestra un error.
-2. `promedio >= 90`: desempeño **Excelente**, recibe certificado de honor.
-3. `promedio >= 70`: **Aprobado**, continúa con la siguiente competencia.
-4. `promedio >= 60`: **En riesgo**, debe presentar plan de mejoramiento.
-5. `else` (menor que 60): **Reprobado**, debe repetir la competencia.
+- `if edad < 12`: si la persona es niño, la entrada vale $8.000.
+- `elif edad < 60`: si es adulto (de 12 a 59 años), vale $15.000.
+- `else`: si es adulto mayor (60 años o más), vale $10.000.
 
 ### ¿Por qué las organicé de esa manera?
 
-- Primero va la **validación de datos**, porque no tiene sentido calcular un promedio con notas imposibles (por ejemplo 120 o -5).
-- Luego los rangos van **del valor más alto al más bajo**. Así cada `elif` solo se revisa si las condiciones anteriores fueron falsas, y no hace falta escribir los dos límites del rango. Por ejemplo, al llegar a `elif promedio >= 70` ya se sabe que el promedio es menor que 90, entonces ese bloque cubre exactamente el rango de 70 a 89.99.
-- Si se pusieran en otro orden (por ejemplo `promedio >= 60` primero), un aprendiz con 95 entraría en esa condición y nunca llegaría a "Excelente". Por eso el orden importa.
-- El `else` final atrapa todo lo que no cumplió ninguna condición (menos de 60), así ningún caso queda sin respuesta.
+Las ordené de la edad **menor a la mayor**. Python revisa las condiciones de arriba hacia abajo y entra solo en la primera que se cumpla. Por eso, cuando llega a `elif edad < 60` ya sabe que la edad **no** es menor que 12, y no hace falta escribir `edad >= 12 and edad < 60`.
+
+El `else` del final atrapa todos los casos que no cumplieron las condiciones anteriores (60 años o más), así ninguna edad queda sin precio.
 
 ### ¿Qué ocurre si cambia uno de los valores de entrada?
 
-Cambia el promedio y, por lo tanto, la rama que se ejecuta. Ejemplos probados:
+| Edad | Entradas | Resultado |
+|------|----------|-----------|
+| 8 | 2 | Niño, $8.000 c/u, total $16.000 |
+| 11 | 1 | Niño, $8.000 (11 todavía es menor que 12) |
+| 12 | 1 | Adulto, $15.000 (con un año más cambia de categoría) |
+| 59 | 1 | Adulto, $15.000 |
+| 60 | 2 | Adulto mayor, $10.000 c/u, total $20.000 |
 
-| Notas | Promedio | Resultado |
-|-------|----------|-----------|
-| 95, 90, 92 | 92.33 | Excelente |
-| 95, 90, **60** | 81.67 | Aprobado (bajar una nota lo saca de "Excelente") |
-| 65, 60, 62 | 62.33 | En riesgo |
-| 50, 55, 60 | 55.00 | Reprobado |
-| **120**, 60, 62 | — | Error: nota fuera de rango (no se calcula el promedio) |
-
-Basta con que una sola nota cambie para que el promedio cruce un límite (90, 70 o 60) y el programa tome una decisión distinta. Y si se ingresa un valor inválido, el programa lo detecta antes de hacer cualquier cálculo.
+- Si cambia la **edad**, puede cambiar la rama que se ejecuta y, con ella, el tipo de cliente y el precio. El cambio ocurre justo en los límites: con 11 años se cobra como niño y con 12 como adulto.
+- Si cambia la **cantidad**, el precio de cada entrada sigue igual y solo cambia el total.

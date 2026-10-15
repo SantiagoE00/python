@@ -1,7 +1,12 @@
-# Ejercicio 7: Promocion de llantas "Todo Terreno".
-# Menos de 5 llantas -> $300.000 cada una
-# De 5 a 10 llantas  -> $250.000 cada una
-# Mas de 10 llantas  -> $200.000 cada una
+# ==========================================================================
+# EJERCICIO 7
+# En una llantera se ha establecido una promocion de las llantas marca
+# "Todo Terreno", dicha promocion consiste en lo siguiente:
+# Si se compran menos de cinco llantas el precio es de $300.000 cada una, de
+# $250.000 si se compran de cinco a 10 y de $200.000 si se compran mas de 10.
+# Obtener la cantidad de dinero que una persona tiene que pagar por cada una de
+# las llantas que compre.
+# ==========================================================================
 
 print("=== PROMOCION LLANTAS TODO TERRENO ===")
 cantidad = int(input("Ingrese la cantidad de llantas: "))

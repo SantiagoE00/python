@@ -1,16 +1,25 @@
-# Ejercicio 8: Determinar si una persona tiene anemia segun su nivel de
-# hemoglobina, su edad y su sexo. Si la hemoglobina es menor que el limite
-# inferior del rango que le corresponde, el resultado es POSITIVO.
+# ==========================================================================
+# EJERCICIO 8
+# Tomando como base los resultados obtenidos en un laboratorio de analisis
+# clinicos, un medico determina si una persona tiene anemia o no, lo cual
+# depende de su nivel de hemoglobina en la sangre, de su edad y de su sexo.
+# Si el nivel de hemoglobina que tiene una persona es menor que el rango que
+# le corresponde, se determina su resultado como positivo y en caso contrario
+# como negativo. La tabla en la que el medico se basa es la siguiente:
 #
-# EDAD                  NIVEL HEMOGLOBINA
-# 0 - 1 mes             13   - 26   g%
-# > 1 y <= 6 meses      10   - 18   g%
-# > 6 y <= 12 meses     11   - 15   g%
-# > 1 y <= 5 anios      11.5 - 15   g%
-# > 5 y <= 10 anios     12.6 - 15.5 g%
-# > 10 y <= 15 anios    13   - 15.5 g%
-# mujeres > 15 anios    12   - 16   g%
-# hombres > 15 anios    14   - 18   g%
+#   EDAD                  NIVEL HEMOGLOBINA
+#   0 - 1 mes             13   - 26   g%
+#   > 1 y <= 6 meses      10   - 18   g%
+#   > 6 y <= 12 meses     11   - 15   g%
+#   > 1 y <= 5 anios      11.5 - 15   g%
+#   > 5 y <= 10 anios     12.6 - 15.5 g%
+#   > 10 y <= 15 anios    13   - 15.5 g%
+#   mujeres > 15 anios    12   - 16   g%
+#   hombres > 15 anios    14   - 18   g%
+#
+# Nota: como la tabla mezcla meses y anios, el programa pregunta en que
+# unidad esta la edad y la convierte toda a meses para comparar.
+# ==========================================================================
 
 print("=== DIAGNOSTICO DE ANEMIA ===")
 edad = float(input("Ingrese la edad: "))

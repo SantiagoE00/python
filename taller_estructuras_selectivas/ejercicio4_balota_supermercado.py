@@ -1,5 +1,12 @@
-# Ejercicio 4: Descuento en el supermercado segun el color de la balota.
-# Rojo -> 15%, verde -> 20%, otro color -> sin descuento.
+# ==========================================================================
+# EJERCICIO 4
+# En un supermercado se hace una promocion, mediante la cual el cliente obtiene
+# un descuento dependiendo de un color que se escoge al azar. Si el color de la
+# balota es rojo el descuento es del 15% sobre el total de la compra; si la
+# balota es verde el descuento es del 20%. Si el color es diferente a los
+# indicados no obtendra descuento. Imprimir el valor de la compra, el color de
+# la balota, el descuento y el valor a pagar.
+# ==========================================================================
 
 print("=== PROMOCION DE LA BALOTA ===")
 valor_compra = float(input("Ingrese el valor de la compra: "))
