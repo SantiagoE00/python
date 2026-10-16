@@ -28,21 +28,21 @@ hemoglobina = float(input("Ingrese el nivel de hemoglobina (g%): "))
 
 # Se pasa la edad a meses para comparar todo en la misma unidad
 if unidad == "2":
-    edad_meses = edad * 12
+    edadMeses = edad * 12
 else:
-    edad_meses = edad
+    edadMeses = edad
 
-if edad_meses <= 1:
+if edadMeses <= 1:
     minimo = 13
-elif edad_meses <= 6:
+elif edadMeses <= 6:
     minimo = 10
-elif edad_meses <= 12:
+elif edadMeses <= 12:
     minimo = 11
-elif edad_meses <= 60:      # hasta 5 anios
+elif edadMeses <= 60:      # hasta 5 anios
     minimo = 11.5
-elif edad_meses <= 120:     # hasta 10 anios
+elif edadMeses <= 120:     # hasta 10 anios
     minimo = 12.6
-elif edad_meses <= 180:     # hasta 15 anios
+elif edadMeses <= 180:     # hasta 15 anios
     minimo = 13
 else:
     sexo = input("Ingrese el sexo (F = femenino, M = masculino): ").strip().upper()

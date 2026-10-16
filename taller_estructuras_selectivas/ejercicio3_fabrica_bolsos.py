@@ -23,22 +23,22 @@ print("=== COMPRA A LA FABRICA DE BOLSOS ===")
 cantidad = int(input("Ingrese la cantidad de bolsos: "))
 precio = float(input("Ingrese el precio de cada bolso: "))
 
-monto_total = cantidad * precio
+montoTotal = cantidad * precio
 
-if monto_total > 500000:
-    dinero_propio = monto_total * 0.55
-    prestamo_banco = monto_total * 0.30
-    credito_fabricante = monto_total - dinero_propio - prestamo_banco
+if montoTotal > 500000:
+    dineroPropio = montoTotal * 0.55
+    prestamoBanco = montoTotal * 0.30
+    creditoFabricante = montoTotal - dineroPropio - prestamoBanco
 else:
-    dinero_propio = monto_total * 0.70
-    prestamo_banco = 0
-    credito_fabricante = monto_total * 0.30
+    dineroPropio = montoTotal * 0.70
+    prestamoBanco = 0
+    creditoFabricante = montoTotal * 0.30
 
-intereses = credito_fabricante * 0.20
+intereses = creditoFabricante * 0.20
 
-print(f"Monto total de la compra: ${monto_total:,.2f}")
-print(f"Valor invertido de dinero propio: ${dinero_propio:,.2f}")
-print(f"Valor prestado al banco: ${prestamo_banco:,.2f}")
-print(f"Valor del credito al fabricante: ${credito_fabricante:,.2f}")
+print(f"Monto total de la compra: ${montoTotal:,.2f}")
+print(f"Valor invertido de dinero propio: ${dineroPropio:,.2f}")
+print(f"Valor prestado al banco: ${prestamoBanco:,.2f}")
+print(f"Valor del credito al fabricante: ${creditoFabricante:,.2f}")
 print(f"Intereses del fabricante (20%): ${intereses:,.2f}")
-print(f"Total a pagar al fabricante por el credito: ${credito_fabricante + intereses:,.2f}")
+print(f"Total a pagar al fabricante por el credito: ${creditoFabricante + intereses:,.2f}")

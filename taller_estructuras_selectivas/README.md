@@ -38,8 +38,8 @@ Tomé el **Ejercicio 7** (promoción de llantas "Todo Terreno") y lo dejé igual
 | `if cantidad < 5` | Menos de 5 llantas: $300.000 cada una (original) |
 | `elif cantidad <= 10` | De 5 a 10 llantas: $250.000 cada una (original) |
 | `else` | Más de 10 llantas: $200.000 cada una (original) |
-| `if forma_pago == "efectivo"` | 5% de descuento sobre el subtotal (nuevo) |
-| `elif forma_pago == "tarjeta"` | Sin descuento (nuevo) |
+| `if formaPago == "efectivo"` | 5% de descuento sobre el subtotal (nuevo) |
+| `elif formaPago == "tarjeta"` | Sin descuento (nuevo) |
 | `else` | Forma de pago no válida, sin descuento (nuevo) |
 
 ### ¿Por qué las organicé de esa manera?

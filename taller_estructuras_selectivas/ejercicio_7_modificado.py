@@ -52,37 +52,37 @@ else:
 
     if cantidad < 5:
         # Entra aqui si compra de 1 a 4 llantas
-        precio_llanta = 300000
+        precioLlanta = 300000
 
     elif cantidad <= 10:
         # Entra aqui si NO fue menor que 5, pero si es hasta 10.
         # O sea, compra de 5 a 10 llantas.
-        precio_llanta = 250000
+        precioLlanta = 250000
 
     else:
         # Entra aqui si ninguna condicion anterior se cumplio.
         # O sea, compra mas de 10 llantas.
-        precio_llanta = 200000
+        precioLlanta = 200000
 
     # Calculamos el subtotal: precio de una llanta por la cantidad
-    subtotal = cantidad * precio_llanta
+    subtotal = cantidad * precioLlanta
 
     # ----------------------------------------------------------------------
     # PARTE 4: PEDIR LA FORMA DE PAGO (NUEVO)
     # ----------------------------------------------------------------------
     # .strip() quita espacios de sobra y .lower() pasa todo a minusculas,
     # asi da igual si el usuario escribe "Efectivo", "EFECTIVO" o "efectivo".
-    forma_pago = input("Forma de pago (efectivo / tarjeta): ").strip().lower()
+    formaPago = input("Forma de pago (efectivo / tarjeta): ").strip().lower()
 
     # ----------------------------------------------------------------------
     # PARTE 5: DESCUENTO SEGUN LA FORMA DE PAGO (NUEVO)
     # ----------------------------------------------------------------------
 
-    if forma_pago == "efectivo":
+    if formaPago == "efectivo":
         # Pagando en efectivo se descuenta el 5% del subtotal
         descuento = subtotal * 0.05
 
-    elif forma_pago == "tarjeta":
+    elif formaPago == "tarjeta":
         # Pagando con tarjeta no hay descuento
         descuento = 0
 
@@ -101,7 +101,7 @@ else:
     # El :, dentro de las llaves pone separador de miles (300000 -> 300,000).
     # El :.0f quita los decimales.
 
-    print(f"Precio por cada llanta: ${precio_llanta:,}")
+    print(f"Precio por cada llanta: ${precioLlanta:,}")
     print(f"Subtotal ({cantidad} llantas): ${subtotal:,}")
     print(f"Descuento por forma de pago: ${descuento:,.0f}")
     print(f"Total a pagar: ${total:,.0f}")

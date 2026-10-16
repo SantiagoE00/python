@@ -12,13 +12,13 @@ print("=== PROMOCION LLANTAS TODO TERRENO ===")
 cantidad = int(input("Ingrese la cantidad de llantas: "))
 
 if cantidad < 5:
-    precio_llanta = 300000
+    precioLlanta = 300000
 elif cantidad <= 10:
-    precio_llanta = 250000
+    precioLlanta = 250000
 else:
-    precio_llanta = 200000
+    precioLlanta = 200000
 
-total = cantidad * precio_llanta
+total = cantidad * precioLlanta
 
-print(f"Precio por cada llanta: ${precio_llanta:,}")
+print(f"Precio por cada llanta: ${precioLlanta:,}")
 print(f"Total a pagar por {cantidad} llantas: ${total:,}")

@@ -13,11 +13,11 @@ promedio = float(input("Ingrese el promedio del ultimo periodo: "))
 
 if promedio >= 4.0:
     descuento = pension * 0.30
-    total_pagar = pension - descuento
+    totalPagar = pension - descuento
     print(f"Descuento del 30%: ${descuento:,.2f}")
 else:
     iva = pension * 0.10
-    total_pagar = pension + iva
+    totalPagar = pension + iva
     print(f"IVA del 10%: ${iva:,.2f}")
 
-print(f"El alumno debe pagar: ${total_pagar:,.2f}")
+print(f"El alumno debe pagar: ${totalPagar:,.2f}")

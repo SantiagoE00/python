@@ -11,15 +11,15 @@ print("=== COMPRA DE ZAPATILLAS ===")
 cantidad = int(input("Ingrese la cantidad de zapatillas: "))
 precio = float(input("Ingrese el precio de cada zapatilla: "))
 
-valor_compra = cantidad * precio
+valorCompra = cantidad * precio
 
 if cantidad >= 3:
-    descuento = valor_compra * 0.20
+    descuento = valorCompra * 0.20
 else:
-    descuento = valor_compra * 0.10
+    descuento = valorCompra * 0.10
 
-valor_pagar = valor_compra - descuento
+valorPagar = valorCompra - descuento
 
-print(f"Valor de la compra: ${valor_compra:,.2f}")
+print(f"Valor de la compra: ${valorCompra:,.2f}")
 print(f"Valor del descuento: ${descuento:,.2f}")
-print(f"Valor a pagar: ${valor_pagar:,.2f}")
+print(f"Valor a pagar: ${valorPagar:,.2f}")
