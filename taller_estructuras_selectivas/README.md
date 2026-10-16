@@ -22,7 +22,7 @@ Para ejecutar cualquiera: `python ejercicio1_aprueba_algoritmia.py`
 
 ## Parte b – Ejercicio modificado
 
-Archivo: `Ejercicio7 Modificado.py`
+Archivo: `ejercicio_7_modificado.py`
 
 Tomé el **Ejercicio 7** (promoción de llantas "Todo Terreno") y lo dejé igual, pero le agregué funciones nuevas:
 
