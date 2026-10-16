@@ -28,8 +28,8 @@ while opcion != "4":
     if opcion == "1":
         # Cada vez que se elige esta opcion se empieza de cero
         sumaCalificaciones = 0
-        notaMasAlta = None
-        notaMasBaja = None
+        notaMasAlta = 0
+        notaMasBaja = 0
 
         # El ciclo for se repite una vez por cada alumno
         for i in range(1, totalAlumnos + 1):
@@ -38,12 +38,13 @@ while opcion != "4":
             # Sumamos la calificacion al acumulador
             sumaCalificaciones += calificacion
 
-            # Si es la primera nota o es mayor que la mas alta, se guarda
-            if notaMasAlta is None or calificacion > notaMasAlta:
+            # Si es el primer alumno (i == 1), su nota se guarda como la mas
+            # alta. Despues, se guarda solo si es mayor que la mas alta.
+            if i == 1 or calificacion > notaMasAlta:
                 notaMasAlta = calificacion
 
-            # Si es la primera nota o es menor que la mas baja, se guarda
-            if notaMasBaja is None or calificacion < notaMasBaja:
+            # Lo mismo para la mas baja, pero preguntando si es menor
+            if i == 1 or calificacion < notaMasBaja:
                 notaMasBaja = calificacion
 
         # Calculamos el promedio y marcamos que ya hay datos
